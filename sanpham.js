@@ -7,7 +7,6 @@ function start () {
     .then(function (data) {
         console.log(data)
         var tbody = document.querySelector("tbody")
-        // console.log(tbody)
         for (var i = 0; i < data.length; i++) {
             var tr = document.createElement("tr")
             var td1 = document.createElement("td")
@@ -73,6 +72,39 @@ function editProduct(id) {
                 window.location.reload()
             }
     })
+}
+function addProduct() {
+    document.querySelector('.modaledit').style.display = 'block'
+    document.querySelector('.closeChangess').onclick = function () {
+        document.querySelector('.modaledit').style.display = 'none'
+    }
+    document.querySelector('.closes').onclick = function () {
+        document.querySelector('.modaledit').style.display = 'none'
+    }
+
+    document.querySelector('.saveChangess').onclick = function () {
+        var username = document.querySelector('#inputUsernames').value
+        var password = document.querySelector('#inputPasswords').value
+        var data = {
+            username : username,
+            password : password
+        }
+        fetch('https://66d27be6184dce1713cda906.mockapi.io/username', {
+            method : 'POST',
+            headers : {
+                'Content-Type' : 'application/json'
+            },
+            body : JSON.stringify(data)
+        })
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            console.log(data)
+            window.location.reload()
+        })
+        document.querySelector('.modal').style.display = 'none'
+    }
 }
 
 function deleteProduct(id) {
