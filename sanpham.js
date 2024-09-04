@@ -73,6 +73,8 @@ function editProduct(id) {
             }
     })
 }
+
+
 function addProduct() {
     document.querySelector('.modaledit').style.display = 'block'
     document.querySelector('.closeChangess').onclick = function () {
@@ -120,4 +122,4 @@ function deleteProduct(id) {
         window.location.reload()
     })
 }
-start()
+start() 
