@@ -21,7 +21,7 @@ document.querySelector("#form").addEventListener("submit", function (event) {
                     password.classList.remove("is-invalid");
                     emailHelp[1].innerText = "";
                     emailHelp[2].innerText = "Đăng nhập thành công";
-                    // window.location.href = "./sanpham.html"; 
+                    window.location.href = "./sanpham.html"; 
                 } else {
                     password.classList.add("is-invalid");
                     emailHelp[1].innerText = "Password không đúng";
